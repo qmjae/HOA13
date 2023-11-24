@@ -1,0 +1,33 @@
+---
+- name: Update package cache on Ubuntu
+  apt:
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install common packages on Ubuntu
+  apt:
+    name:
+      - vim
+      - htop
+      - curl
+      - wget
+    state: present
+  when: ansible_distribution == "Ubuntu"
+
+- name: Update package cache on CentOS
+  dnf:
+    name: '*'
+    state: latest
+    use_backend: dnf4
+  when: ansible_distribution == "CentOS"
+
+- name: Install common packages on CentOS
+  dnf:
+    name:
+      - vim
+      - htop
+      - curl
+      - wget
+    state: present
+    use_backend: dnf4
+  when: ansible_distribution == "CentOS"

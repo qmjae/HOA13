@@ -1,0 +1,23 @@
+---
+- name: OpenStack Prerequisite Installation Playbook
+#  hosts: ubuntu_controller
+#  become: true
+#  roles:
+#    - common
+#    - ntp
+#    - openstack_packages
+#    - sql_database
+#    - message_queue
+#    - memcached
+#    - etcd
+    
+  hosts: centos_compute
+  become: true
+  roles:
+    - common
+    - ntp
+    - openstack_packages
+    - sql_database
+    - message_queue
+    - memcached
+    - etcd

@@ -1,0 +1,9 @@
+[ubuntu_controller]
+192.168.56.102
+
+[centos_compute]
+192.168.56.104 ansible_python_interpreter=/usr/bin/python3
+
+[etcd_servers]
+server1 ansible_host=192.168.56.102
+server2 ansible_host=192.168.56.104
